@@ -1,0 +1,9 @@
+{
+  "name": "khaoussou/carnet_de_contact",
+  "autoload": {
+    "Model\\": "model/",
+    "Controller\\": "controller/",
+    "Vue\\": "vue/"
+  },
+  "require": {}
+}

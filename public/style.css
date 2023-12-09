@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.corps {
+  background-color: rgb(232, 212, 189);
+  padding: 1%;
+}
+
+input,
+select {
+  padding: 2px;
+}
+
+.filtre {
+  margin-top: 1%;
+  width: 45%;
+  gap: 2%;
+}
+
+#filtrer {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#filtrer:hover {
+  background-color: #4caf98;
+  color: white;
+}
+
+.select {
+  width: 200px;
+  border: none;
+}
+
+.title {
+  text-align: center;
+  margin: 5%;
+}
+
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 1%;
+  font-size: 1.5rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr {
+  cursor: pointer;
+}
+
+.dflex {
+  display: flex;
+}
+
+.jcc {
+  display: flex;
+  justify-content: center;
+}
+
+.jcs {
+  display: flex;
+  justify-content: start;
+}
+
+.aic {
+  display: flex;
+  align-items: center;
+}
+
+.fdc {
+  display: flex;
+  flex-direction: column;
+}
+
+.jcsb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.open-modal {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf98;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form {
+  gap: 4%;
+  width: 50rem;
+  height: 40%;
+  font-size: 1.5em;
+  background-color: rgb(255, 255, 255);
+}
+
+.width-form {
+  width: 50%;
+  margin-top: 1%;
+}
+
+.width-button {
+  width: 30%;
+  margin-top: 10%;
+}
+
+#add-contact,
+#edit-contact,
+.cancel {
+  width: 40%;
+  border-radius: 5px;
+  padding: 3%;
+  font-size: 0.7em;
+  border: none;
+}
+
+#add-contact:hover,
+#edit-contact:hover,
+.cancel:hover {
+  cursor: pointer;
+  background-color: #4caf98;
+  color: white;
+}
+
+.modal,
+.modal1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  display: none;
+}
