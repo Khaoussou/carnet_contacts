@@ -35,7 +35,5 @@ class Ajax
             'prenom' => $prenom,
             'categorie_id' => $categorie
         ]);
-
-        header("Location:" . LINK . "/");
     }
 }

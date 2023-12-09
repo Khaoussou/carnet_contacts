@@ -124,7 +124,6 @@ tr {
 }
 
 #add-contact,
-#edit-contact,
 .cancel {
   width: 40%;
   border-radius: 5px;
@@ -134,15 +133,13 @@ tr {
 }
 
 #add-contact:hover,
-#edit-contact:hover,
 .cancel:hover {
   cursor: pointer;
   background-color: #4caf98;
   color: white;
 }
 
-.modal,
-.modal1 {
+.modal {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);

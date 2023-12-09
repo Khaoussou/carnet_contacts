@@ -1,9 +1,9 @@
 let open = document.querySelector(".open-modal");
 let modal = document.querySelector(".modal");
-let modal1 = document.querySelector(".modal1");
 let cancel = document.querySelector(".cancel");
-let add = document.querySelector("#add-contact");
-let contact = document.querySelector(".contact");
+let select = document.querySelector("#select");
+let valeurInput = document.querySelector("#valeur-a-filtrer");
+let tabContact;
 const url = "http://localhost:8000/";
 
 async function getData(url) {
@@ -12,21 +12,13 @@ async function getData(url) {
   return d;
 }
 
-// fetch("ajax.php")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     // data contient les contacts
-//     data.forEach((contact) => {
-//       let row = `
-//           <tr>
-//             <td>${contact.nom}</td>
-//             ...
-//           </tr>
-//         `;
+function getValue(select) {
+  return select.options[select.selectedIndex].value;
+}
 
-//       document.querySelector("tbody").innerHTML += row;
-//     });
-//   });
+document.addEventListener("DOMContentLoaded", () => {
+  tabContact = contactsData;
+});
 
 open.addEventListener("click", () => {
   modal.style.display = "flex";
@@ -36,6 +28,33 @@ cancel.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-contact.addEventListener("click", () => {
-  modal1.style.display = "flex";
+let valueSelect;
+select.addEventListener("change", () => {
+  valueSelect = getValue(select);
+  console.log(contactsData);
+  console.log(valueSelect);
 });
+
+valeurInput.addEventListener("change", () => {
+  if (valueSelect == "nom") {
+    let bap = tabContact.filter(
+      (contact) => contact.nom.toLowerCase() == valeurInput.value.toLowerCase()
+    );
+    console.log(bap);
+  }
+  if (valueSelect == "prenom") {
+    let bap = tabContact.filter(
+      (contact) =>
+        contact.prenom.toLowerCase() == valeurInput.value.toLowerCase()
+    );
+    console.log(bap);
+  }
+  if (valueSelect == "categorie") {
+    let bap = tabContact.filter(
+      (contact) => contact.categorie == valeurInput.value
+    );
+    console.log(bap);
+  }
+});
+
+
