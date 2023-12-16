@@ -35,5 +35,8 @@ class Ajax
             'prenom' => $prenom,
             'categorie_id' => $categorie
         ]);
+
+        header("Location: " . "http://localhost:8000/");
+        exit();
     }
 }

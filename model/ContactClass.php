@@ -17,7 +17,7 @@ class ContactClass
 
     public function all()
     {
-        return $this->database->request("SELECT nom, prenom, libelle FROM contact JOIN categorie ON categorie.id = contact.categorie_id");
+        return $this->database->request("SELECT contact.id, contact.nom, contact.prenom, categorie.libelle FROM contact JOIN categorie ON categorie.id = contact.categorie_id");
     }
 
     public function allCat()
