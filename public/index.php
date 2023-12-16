@@ -8,8 +8,9 @@ require_once("../controller/Ajax.php");
 $data = new Ajax();
 $contacts = $data->allContact();
 echo '<script>';
-echo 'var contactsData = ' . json_encode($contacts) . ';';
+echo 'let contactsData = ' . json_encode($contacts) . ';';
 echo '</script>';
+// print_r($contacts);
 $cats = $data->allCatt();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -55,7 +56,7 @@ define("LINK", "http://localhost:8000/");
             </thead>
             <tbody>
                 <?php foreach ($contacts as $contact) { ?>
-                    <tr class="contact">
+                    <tr class="contact" id="<?= $contact['id'] ?>">
                         <td><?= $contact['nom'] ?></td>
                         <td><?= $contact['prenom'] ?></td>
                         <td><?= $contact['libelle'] ?></td>
@@ -89,6 +90,33 @@ define("LINK", "http://localhost:8000/");
                 <div class="dflex jcsb width-button">
                     <button id="add-contact">Ajouter</button>
                     <button class="cancel">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="modal-bloc" class="modal1 dflex jcc">
+        <div class="modal-content form">
+            <h3 class="title">Modification de contact</h3>
+            <form id="editForm" action="" method="" class="dflex fdc jcc aic fdc">
+                <div class="dflex jcsb width-form">
+                    <label for="nom">Nom:</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+                <div class="dflex jcsb width-form">
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+                <div class="dflex jcsb width-form">
+                    <label for="categorie">Catégorie:</label>
+                    <select id="cat" name="categorie">
+                        <?php foreach ($cats as $cat) { ?>
+                            <option value="<?= $cat['id'] ?>"><?= $cat['libelle'] ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="dflex jcsb width-button">
+                    <button id="edit-contact">Editer</button>
+                    <button class="cancel1">Annuler</button>
                 </div>
             </form>
         </div>
